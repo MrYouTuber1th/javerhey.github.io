@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Мои самоделки</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Мои самоделки</h1>
+    </header>
+    <main>
+        <button id="showArticlesButton">Показать статьи</button>
+        <div id="articles" style="display: none;">
+            <article>
+                <h2>OLED дисплей к ардуіно</h2>
+                <p>OLED дисплей це дуже легко</p>
+                <p>як підключити (GND > GND) (VDD > 3.3V) (SCK > 5A) (SDA > 4A)</p>
+                <a href="ссылка_на_файл_на_сервере" download="arduino_oled_code.ino">Скачать код</a>
+                <p>код:</p>
+                <pre>
+                #include &lt;OLED_I2C.h&gt;
+                OLED myOLED(SDA, SCL, 8);
+                extern uint8_t SmallFont[];
+                void setup()
+                {
+                  myOLED.begin();
+                  myOLED.setFont(SmallFont);
+                  randomSeed(analogRead(0));
+                }
+                void loop()
+                {
+                    myOLED.print("Made in JaverHEY", 14, 30);
+                    myOLED.update();
+                }
+                </pre>
+            </article>            
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 JaveHEY.inc</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
